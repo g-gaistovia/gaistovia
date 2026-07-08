@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<b:include data='blog' name='all-head-content'/>
+<title><data:blog.pageTitle/></title>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+<b:skin><![CDATA[
+:root{
+--bg:#0f0f0f;--bg2:#141414;--bg3:#1a1a1a;
+--txt:#ffffff;--txt2:#a0a0a0;--txt3:#606060;
+--gold:#d4af37;--gold2:#f0c84a;--gold3:#b8941f;
+--wa:#25D366;--wa2:#1ebe5d;
+--glass:rgba(255,255,255,0.04);--gborder:rgba(255,255,255,0.07);
+--gborder2:rgba(212,175,55,0.18);
+--shadow:0 0 50px rgba(212,175,55,0.12);
+--r:14px;--r2:22px;
+--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--fD:'Montserrat',sans-serif;--fB:'Space Grotesk',sans-serif;--fU:'Inter',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background:var(--bg);color:var(--txt);font-family:var(--fB);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold),var(--gold2));border-radius:2px;}
+img{max-width:100%;height:auto;}
+a{text-decoration:none;color:inherit;}
+#ga-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2),#fff8dc);z-index:99999;width:0%;box-shadow:0 0 8px rgba(212,175,55,0.6);}
+#ga-loader{position:fixed;inset:0;background:var(--bg);z-index:999999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .6s ease;}
+#ga-loader.hide{opacity:0;pointer-events:none;}
+.ldr-wrap{position:relative;}
+.ldr-img{width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);animation:ldrSpin 3s linear infinite;filter:drop-shadow(0 0 18px rgba(212,175,55,0.5));}
+.ldr-ring{position:absolute;inset:-8px;border-radius:50%;border:1px solid transparent;border-top:1px solid var(--gold);border-right:1px solid var(--gold2);animation:ldrSpin 1.4s linear infinite reverse;}
+@keyframes ldrSpin{to{transform:rotate(360deg);}}
+.ldr-name{font-family:var(--fD);font-size:1.5rem;font-weight:900;letter-spacing:5px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ldr-sub{font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--txt3);}
+.ldr-bar{width:170px;height:1px;background:var(--bg3);overflow:hidden;}
+.ldr-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));animation:ldrFill 2.3s ease forwards;}
+@keyframes ldrFill{0%{width:0%}100%{width:100%}}
+#ga-cursor-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);}
+#ga-cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(212,175,55,0.4);border-radius:50%;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s;}
+body.chov #ga-cursor-ring{width:54px;height:54px;border-color:rgba(212,175,55,0.75);}
+#ga-nav{position:fixed;top:0;left:0;right:0;z-index:9900;padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:all .4s var(--ease);}
+#ga-nav.scrolled{background:rgba(10,10,10,0.96);backdrop-filter:blur(22px);border-bottom:1px solid var(--gborder);height:56px;}
+.nlogo-w{display:flex;align-items:center;gap:10px;}
+.nlogo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid var(--gborder2);transition:all .3s;}
+.nlogo-w:hover .nlogo-img{border-color:var(--gold);box-shadow:0 0 14px rgba(212,175,55,0.4);}
+.nlogo-t{font-family:var(--fD);font-size:1.1rem;font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-family:var(--fU);font-size:.78rem;font-weight:500;color:var(--txt2);letter-spacing:1px;text-transform:uppercase;transition:color .3s;position:relative;padding-bottom:3px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold3)) !important;color:#000 !important;-webkit-text-fill-color:#000 !important;padding:8px 20px !important;border-radius:50px !important;font-weight:700 !important;box-shadow:0 4px 16px rgba(212,175,55,0.3) !important;}
+.nav-cta::after{display:none !important;}
+.nav-cta:hover{transform:translateY(-2px) !important;box-shadow:0 8px 28px rgba(212,175,55,0.5) !important;}
+.nav-r{display:flex;align-items:center;gap:10px;}
+.n-theme{width:36px;height:36px;background:var(--glass);border:1px solid var(--gborder);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);cursor:pointer;transition:all .3s;font-size:.82rem;}
+.n-theme:hover{background:var(--gold);color:#000;}
+.n-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.n-burger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;transition:all .3s;}
+.n-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.n-burger.open span:nth-child(2){opacity:0;}
+.n-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mob-nav{position:fixed;inset:0;background:rgba(8,8,8,0.98);backdrop-filter:blur(28px);z-index:9800;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;transform:translateX(100%);transition:transform .42s var(--ease);}
+.mob-nav.open{transform:translateX(0);}
+.mob-nav a{font-family:var(--fD);font-size:1.7rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--txt2);transition:color .3s;}
+.mob-nav a:hover{color:var(--gold);}
+.mob-wa{background:var(--wa) !important;color:#fff !important;-webkit-text-fill-color:#fff !important;padding:13px 28px !important;border-radius:50px !important;font-size:.95rem !important;display:flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(37,211,102,0.4);}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:128px 5% 88px;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,0.032) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,0.032) 1px,transparent 1px);background-size:54px 54px;}
+.h-orb-a{position:absolute;width:620px;height:620px;background:radial-gradient(circle,rgba(212,175,55,0.09) 0%,transparent 68%);top:-8%;right:-5%;animation:orbF 9s ease-in-out infinite;border-radius:50%;}
+.h-orb-b{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,0.07) 0%,transparent 68%);bottom:8%;left:6%;animation:orbF 7s ease-in-out infinite reverse;border-radius:50%;}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(22px,-16px) scale(1.04);}66%{transform:translate(-16px,22px) scale(.97);}}
+.h-pts{position:absolute;inset:0;pointer-events:none;}
+.hpt{position:absolute;border-radius:50%;background:var(--gold);animation:ptF linear infinite;opacity:0;}
+@keyframes ptF{0%{transform:translateY(0) translateX(0);opacity:0;}10%{opacity:.6;}85%{opacity:.25;}100%{transform:translateY(-110vh) translateX(55px);opacity:0;}}
+.h-content{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto;}
+.h-badge{display:inline-flex;align-items:center;gap:9px;background:var(--glass);border:1px solid var(--gborder2);border-radius:50px;padding:7px 20px;font-size:.7rem;font-family:var(--fU);letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;backdrop-filter:blur(12px);opacity:0;animation:rUp .8s ease .3s forwards;}
+.h-bdot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:bDot 1.5s ease-in-out infinite;}
+@keyframes bDot{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.5);}50%{box-shadow:0 0 0 5px rgba(212,175,55,0);}}
+.h-brand-show{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;opacity:0;animation:rUp .8s ease .4s forwards;}
+.h-brand-img{width:66px;height:66px;border-radius:50%;object-fit:cover;border:2px solid var(--gborder2);animation:bGlow 3s ease-in-out infinite;}
+@keyframes bGlow{0%,100%{box-shadow:0 0 22px rgba(212,175,55,0.25);}50%{box-shadow:0 0 44px rgba(212,175,55,0.55);}}
+.h-brand-nm{font-family:var(--fD);font-size:clamp(1.1rem,2.5vw,1.8rem);font-weight:900;letter-spacing:4px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.h-brand-sub{font-size:.68rem;letter-spacing:3px;color:var(--txt2);text-transform:uppercase;margin-top:2px;}
+.h1{font-family:var(--fD);font-size:clamp(2.7rem,7vw,6.8rem);font-weight:900;line-height:1.0;letter-spacing:-2px;margin-bottom:20px;opacity:0;animation:rUp .8s ease .55s forwards;}
+.h1 .l1{display:block;color:var(--txt);}
+.h1 .l2-wrap{display:block;min-height:1.15em;}.h1 .l2{display:inline;background:linear-gradient(135deg,var(--gold),var(--gold2),#ffe97a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-right:3px solid var(--gold);animation:blnk .65s step-end infinite;padding-right:2px;}
+.h-sub{font-size:clamp(.92rem,1.7vw,1.18rem);color:var(--txt2);max-width:560px;margin:0 auto 32px;line-height:1.85;opacity:0;animation:rUp .8s ease .7s forwards;}
+.h-typing{color:var(--gold);}
+@keyframes blnk{0%,100%{border-color:var(--gold);}50%{border-color:transparent;}}
+.h-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;opacity:0;animation:rUp .8s ease .88s forwards;}
+.h-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;opacity:0;animation:rUp .8s ease 1.05s forwards;}
+.h-sn{font-family:var(--fD);font-size:2.3rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.h-sl{font-size:.7rem;color:var(--txt3);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+@keyframes rUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.btn-pri{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;font-family:var(--fD);font-weight:700;font-size:.83rem;letter-spacing:1px;text-transform:uppercase;padding:14px 32px;border-radius:50px;transition:all .3s;box-shadow:0 6px 22px rgba(212,175,55,0.3);position:relative;overflow:hidden;}
+.btn-pri::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold2),var(--gold));opacity:0;transition:opacity .3s;}
+.btn-pri:hover{transform:translateY(-3px);box-shadow:0 13px 42px rgba(212,175,55,0.46);}
+.btn-pri:hover::before{opacity:1;}
+.btn-pri span{position:relative;z-index:1;}
+.btn-sec{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--txt);font-family:var(--fD);font-weight:600;font-size:.83rem;letter-spacing:1px;text-transform:uppercase;padding:13px 32px;border-radius:50px;border:1px solid var(--gborder);transition:all .3s;}
+.btn-sec:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#fff;font-family:var(--fD);font-weight:700;font-size:.83rem;padding:13px 30px;border-radius:50px;transition:all .3s;box-shadow:0 6px 22px rgba(37,211,102,0.28);}
+.btn-wa:hover{background:var(--wa2);transform:translateY(-3px);box-shadow:0 13px 42px rgba(37,211,102,0.42);}
+section{padding:88px 5%;position:relative;}
+.s-tag{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-family:var(--fU);font-size:.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:13px;}
+.s-tag::before{content:'';display:block;width:18px;height:1px;background:var(--gold);}
+.s-title{font-family:var(--fD);font-size:clamp(1.9rem,4.3vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:14px;}
+.s-title .g{color:var(--gold);}
+.s-sub{font-size:.97rem;color:var(--txt2);max-width:570px;line-height:1.85;}
+.s-div{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:26px;border-radius:1px;}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .68s ease,transform .68s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-34px);transition:opacity .68s ease,transform .68s ease;}
+.reveal-l.on{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(34px);transition:opacity .68s ease,transform .68s ease;}
+.reveal-r.on{opacity:1;transform:translateX(0);}
+.stagger>*{opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease;}
+.stagger.on>*:nth-child(1){opacity:1;transform:none;}
+.stagger.on>*:nth-child(2){opacity:1;transform:none;transition-delay:.1s;}
+.stagger.on>*:nth-child(3){opacity:1;transform:none;transition-delay:.2s;}
+.stagger.on>*:nth-child(4){opacity:1;transform:none;transition-delay:.3s;}
+.stagger.on>*:nth-child(5){opacity:1;transform:none;transition-delay:.4s;}
+.stagger.on>*:nth-child(6){opacity:1;transform:none;transition-delay:.5s;}
+.stagger.on>*:nth-child(7){opacity:1;transform:none;transition-delay:.6s;}
+.stagger.on>*:nth-child(8){opacity:1;transform:none;transition-delay:.7s;}
+.stagger.on>*:nth-child(9){opacity:1;transform:none;transition-delay:.8s;}
+.mq-strip{background:linear-gradient(135deg,rgba(212,175,55,0.07),rgba(212,175,55,0.03));border-top:1px solid var(--gborder2);border-bottom:1px solid var(--gborder2);padding:16px 0;overflow:hidden;white-space:nowrap;}
+.mq-inner{display:inline-flex;gap:46px;animation:mqScroll 20s linear infinite;}
+.mq-item{display:inline-flex;align-items:center;gap:10px;font-family:var(--fD);font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txt2);}
+.mq-item i{color:var(--gold);font-size:.72rem;}
+@keyframes mqScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+#services{background:var(--bg2);}
+.svc-hd{text-align:center;margin-bottom:56px;}
+.svc-hd .s-sub{margin:0 auto;}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:16px;max-width:1200px;margin:0 auto;}
+.svc-c{background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r);padding:30px 24px;position:relative;overflow:hidden;transition:all .4s var(--ease);}
+.svc-c::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,0.07),transparent);opacity:0;transition:opacity .4s;}
+.svc-c::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.svc-c:hover{border-color:var(--gborder2);transform:translateY(-7px);box-shadow:var(--shadow);}
+.svc-c:hover::before{opacity:1;}
+.svc-c:hover::after{transform:scaleX(1);}
+.svc-icon{width:50px;height:50px;background:linear-gradient(135deg,rgba(212,175,55,0.13),rgba(212,175,55,0.04));border:1px solid var(--gborder2);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--gold);margin-bottom:16px;transition:all .3s;}
+.svc-c:hover .svc-icon{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;border-color:transparent;transform:scale(1.1) rotate(-5deg);}
+.svc-n{font-family:var(--fD);font-size:1rem;font-weight:700;margin-bottom:7px;}
+.svc-d{font-size:.85rem;color:var(--txt2);line-height:1.7;}
+.svc-num{position:absolute;top:16px;right:20px;font-family:var(--fD);font-size:3.2rem;font-weight:900;color:rgba(212,175,55,0.045);line-height:1;pointer-events:none;}
+#portfolio{background:var(--bg);}
+.port-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:46px;flex-wrap:wrap;gap:16px;}
+.p-filters{display:flex;gap:9px;flex-wrap:wrap;}
+.flt-b{background:transparent;border:1px solid var(--gborder);color:var(--txt2);font-family:var(--fU);font-size:.73rem;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;cursor:pointer;transition:all .3s;}
+.flt-b:hover,.flt-b.active{background:var(--gold);border-color:var(--gold);color:#000;font-weight:700;}
+.port-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+.port-item{border-radius:var(--r2);overflow:hidden;position:relative;cursor:pointer;background:var(--bg2);border:1px solid var(--gborder);transition:all .4s var(--ease);}
+.port-item:hover{border-color:var(--gborder2);box-shadow:var(--shadow);}
+.port-item:nth-child(1){grid-column:span 7;}
+.port-item:nth-child(2){grid-column:span 5;}
+.port-item:nth-child(3){grid-column:span 4;}
+.port-item:nth-child(4){grid-column:span 4;}
+.port-item:nth-child(5){grid-column:span 4;}
+.port-img{width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--bg3);}
+.port-img-in{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;transition:transform .6s var(--ease);background:linear-gradient(135deg,var(--bg3),var(--bg));}
+.port-icon{font-size:3.5rem;color:rgba(212,175,55,0.14);}
+.port-item:hover .port-img-in{transform:scale(1.06);}.port-img-in img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);display:block;}.port-item:hover .port-img-in img{transform:scale(1.06);}
+.port-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.38) 40%,transparent);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:20px;}
+.port-item:hover .port-ov{opacity:1;}
+.port-cat{font-size:.66rem;font-family:var(--fU);letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+.port-nm{font-family:var(--fD);font-size:.97rem;font-weight:700;}
+.port-lnk{position:absolute;top:13px;right:13px;width:38px;height:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;opacity:0;transform:scale(.8);transition:all .3s;font-size:.82rem;}
+.port-item:hover .port-lnk{opacity:1;transform:scale(1);}
+.bpc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:20px;max-width:1200px;margin:46px auto 0;}
+.bpc{background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r);overflow:hidden;display:block;transition:all .4s var(--ease);}
+.bpc:hover{border-color:var(--gborder2);transform:translateY(-7px);box-shadow:var(--shadow);}
+.bpc-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+.bpc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.bpc:hover .bpc-img img{transform:scale(1.06);}
+.bpc-body{padding:18px;}
+.bpc-lbl{display:inline-block;background:rgba(212,175,55,0.12);color:var(--gold);font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:8px;}
+.bpc-title{font-family:var(--fD);font-size:.97rem;font-weight:700;margin-bottom:6px;line-height:1.4;}
+.bpc-snip{font-size:.82rem;color:var(--txt2);line-height:1.7;}
+.bpc-ft{display:flex;justify-content:space-between;align-items:center;margin-top:13px;padding-top:13px;border-top:1px solid var(--gborder);}
+.bpc-dt{font-size:.7rem;color:var(--txt3);}
+#about{background:var(--bg2);}
+.about-w{display:grid;grid-template-columns:1fr 1fr;gap:66px;align-items:center;max-width:1200px;margin:0 auto;}
+.about-vis{position:relative;}
+.about-card{border-radius:var(--r2);overflow:hidden;aspect-ratio:4/5;background:var(--bg3);border:1px solid var(--gborder);position:relative;}
+.about-in{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:linear-gradient(135deg,var(--bg3),var(--bg));padding:30px;}
+.about-img-main{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 38px rgba(212,175,55,0.28);animation:aGlow 3s ease-in-out infinite;}
+@keyframes aGlow{0%,100%{box-shadow:0 0 38px rgba(212,175,55,0.28);}50%{box-shadow:0 0 72px rgba(212,175,55,0.58);}}
+.about-logo-img{width:150px;object-fit:contain;opacity:.82;filter:drop-shadow(0 0 14px rgba(212,175,55,0.35));}
+.about-wm{position:absolute;font-family:var(--fD);font-size:8rem;font-weight:900;color:rgba(212,175,55,0.025);letter-spacing:-5px;pointer-events:none;user-select:none;}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:linear-gradient(135deg,var(--gold),var(--gold3));border-radius:var(--r);padding:16px 20px;text-align:center;box-shadow:0 16px 46px rgba(212,175,55,0.3);}
+.ab-n{font-family:var(--fD);font-size:2.3rem;font-weight:900;color:#000;line-height:1;}
+.ab-l{font-size:.62rem;font-weight:700;color:rgba(0,0,0,.65);letter-spacing:1px;text-transform:uppercase;}
+.about-txt{color:var(--txt2);font-size:.93rem;line-height:1.9;margin-bottom:24px;}
+.af-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+.af{display:flex;align-items:flex-start;gap:10px;}
+.af-i{width:28px;height:28px;min-width:28px;background:rgba(212,175,55,0.09);border:1px solid var(--gborder2);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.72rem;margin-top:2px;}
+.af-t strong{display:block;font-size:.85rem;font-weight:600;}
+.af-t span{font-size:.76rem;color:var(--txt2);}
+.cnt-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:52px auto 0;}
+.cnt-c{background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r);padding:24px 16px;text-align:center;transition:all .3s;}
+.cnt-c:hover{border-color:var(--gborder2);transform:translateY(-4px);box-shadow:var(--shadow);}
+.cnt-n{font-family:var(--fD);font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;}
+.cnt-l{font-size:.7rem;color:var(--txt2);letter-spacing:1.5px;text-transform:uppercase;}
+#process{background:var(--bg);}
+.proc-hd{text-align:center;margin-bottom:66px;}
+.proc-hd .s-sub{margin:0 auto;}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);max-width:1080px;margin:0 auto;position:relative;}
+.proc-line{position:absolute;top:47px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.22),rgba(212,175,55,.22),transparent);}
+.proc-step{text-align:center;padding:0 16px;}
+.ps-w{position:relative;display:inline-block;margin-bottom:20px;}
+.ps-n{width:94px;height:94px;background:var(--bg2);border:1px solid var(--gborder);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fD);font-size:1.35rem;font-weight:900;color:var(--gold);transition:all .38s;margin:0 auto;position:relative;z-index:1;}
+.proc-step:hover .ps-n{background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;border-color:transparent;transform:scale(1.1);box-shadow:0 0 38px rgba(212,175,55,0.36);}
+.ps-badge{position:absolute;top:-6px;right:-6px;width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;color:#000;border:2px solid var(--bg);}
+.ps-t{font-family:var(--fD);font-size:1.05rem;font-weight:800;margin-bottom:7px;}
+.ps-d{font-size:.83rem;color:var(--txt2);line-height:1.75;}
+#testimonials{background:var(--bg2);overflow:hidden;}
+.test-hd{text-align:center;margin-bottom:48px;}
+.test-slider{max-width:840px;margin:0 auto;position:relative;overflow:hidden;}
+.test-track{display:flex;transition:transform .5s var(--ease);}
+.test-c{min-width:100%;background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r2);padding:40px;position:relative;overflow:hidden;}
+.test-c::before{content:'"';position:absolute;top:12px;left:32px;font-family:var(--fD);font-size:8rem;font-weight:900;color:rgba(212,175,55,0.07);line-height:1;pointer-events:none;}
+.test-stars{display:flex;gap:3px;color:var(--gold);margin-bottom:16px;}
+.test-txt{font-size:1.02rem;line-height:1.9;color:var(--txt2);margin-bottom:22px;position:relative;z-index:1;}
+.test-auth{display:flex;align-items:center;gap:12px;}
+.test-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));display:flex;align-items:center;justify-content:center;font-family:var(--fD);font-weight:900;font-size:.95rem;color:#000;flex-shrink:0;}
+.test-an{font-family:var(--fD);font-weight:700;font-size:.9rem;margin-bottom:1px;}
+.test-ar{font-size:.76rem;color:var(--txt2);}
+.sl-ctrl{display:flex;justify-content:center;align-items:center;gap:13px;margin-top:26px;}
+.sl-btn{width:40px;height:40px;border-radius:50%;background:var(--glass);border:1px solid var(--gborder);color:var(--txt);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:.82rem;}
+.sl-btn:hover{background:var(--gold);border-color:var(--gold);color:#000;}
+.sl-dots{display:flex;gap:6px;}
+.sl-dot{width:7px;height:7px;border-radius:50%;background:var(--gborder);cursor:pointer;transition:all .3s;}
+.sl-dot.active{background:var(--gold);width:20px;border-radius:4px;}
+#technology{background:var(--bg);}
+.tech-hd{text-align:center;margin-bottom:46px;}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:13px;max-width:940px;margin:0 auto;}
+.tech-item{background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r);padding:24px 12px;text-align:center;transition:all .3s;}
+.tech-item:hover{border-color:var(--gborder2);transform:translateY(-5px);box-shadow:var(--shadow);}
+.tech-ic{font-size:1.9rem;color:var(--gold);margin-bottom:8px;display:block;transition:transform .3s;}
+.tech-item:hover .tech-ic{transform:scale(1.2) rotate(-5deg);}
+.tech-nm{font-family:var(--fU);font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);}
+#wa-cta{background:var(--bg2);}
+.wa-box{max-width:780px;margin:0 auto;background:linear-gradient(135deg,rgba(37,211,102,0.09),rgba(37,211,102,0.03));border:1px solid rgba(37,211,102,0.2);border-radius:var(--r2);padding:56px 42px;text-align:center;position:relative;overflow:hidden;}
+.wa-box::before{content:'';position:absolute;top:-40%;left:-40%;width:180%;height:180%;background:radial-gradient(circle,rgba(37,211,102,0.05) 0%,transparent 60%);animation:waPls 4s ease-in-out infinite;pointer-events:none;}
+@keyframes waPls{0%,100%{transform:scale(1);opacity:.5;}50%{transform:scale(1.08);opacity:1;}}
+.wa-big-i{font-size:3.8rem;color:var(--wa);margin-bottom:16px;display:block;animation:waFl 2s ease-in-out infinite;}
+@keyframes waFl{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.wa-t{font-family:var(--fD);font-size:clamp(1.6rem,3.8vw,2.7rem);font-weight:900;margin-bottom:13px;letter-spacing:-1px;}
+.wa-s{font-size:.97rem;color:var(--txt2);margin-bottom:30px;line-height:1.8;}
+.btn-wa-big{display:inline-flex;align-items:center;gap:11px;background:var(--wa);color:#fff;font-family:var(--fD);font-weight:800;font-size:1.02rem;letter-spacing:1px;padding:17px 42px;border-radius:50px;transition:all .3s;box-shadow:0 13px 42px rgba(37,211,102,0.36);position:relative;z-index:1;}
+.btn-wa-big:hover{background:var(--wa2);transform:translateY(-4px);box-shadow:0 20px 52px rgba(37,211,102,0.5);}
+.wa-note{margin-top:16px;font-size:.76rem;color:rgba(255,255,255,.32);position:relative;z-index:1;}
+#contact{background:var(--bg);}
+.con-w{display:grid;grid-template-columns:1fr 1fr;gap:52px;max-width:1080px;margin:0 auto;}
+.con-items{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
+.con-item{display:flex;align-items:flex-start;gap:13px;background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r);padding:16px 20px;text-decoration:none;color:inherit;transition:all .3s;}
+.con-item:hover{border-color:var(--gborder2);transform:translateX(5px);box-shadow:var(--shadow);}
+.ci-ic{width:40px;height:40px;min-width:40px;background:rgba(212,175,55,0.09);border:1px solid var(--gborder2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.95rem;}
+.ci-t strong{display:block;font-weight:700;font-size:.85rem;margin-bottom:1px;}
+.ci-t span{font-size:.8rem;color:var(--txt2);}
+.con-form{background:var(--glass);border:1px solid var(--gborder);border-radius:var(--r2);padding:32px;}
+.con-form h3{font-family:var(--fD);font-size:1.25rem;font-weight:800;margin-bottom:20px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:.72rem;font-family:var(--fU);letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:6px;}
+.fg input,.fg textarea,.fg select{width:100%;background:rgba(255,255,255,0.027);border:1px solid var(--gborder);border-radius:8px;color:var(--txt);font-family:var(--fB);font-size:.9rem;padding:11px 15px;outline:none;transition:border-color .3s,box-shadow .3s;resize:vertical;}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,0.08);}
+.fg textarea{height:90px;}
+.fg select option{background:var(--bg2);}
+.f-sub-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold3));color:#000;font-family:var(--fD);font-weight:800;font-size:.87rem;letter-spacing:2px;text-transform:uppercase;padding:14px;border-radius:50px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 7px 24px rgba(212,175,55,0.27);}
+.f-sub-btn:hover{transform:translateY(-2px);box-shadow:0 13px 42px rgba(212,175,55,0.44);}
+#ga-footer{background:var(--bg2);border-top:1px solid var(--gborder);}
+.ft-top{padding:68px 5% 50px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:42px;max-width:1200px;margin:0 auto;}
+.ft-logo-w{display:flex;align-items:center;gap:10px;margin-bottom:13px;}
+.ft-logo-i{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--gborder2);}
+.ft-logo-t{font-family:var(--fD);font-size:1.3rem;font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ft-brand p{font-size:.85rem;color:var(--txt2);line-height:1.8;margin-bottom:20px;}
+.ft-soc{display:flex;gap:9px;}
+.soc-l{width:36px;height:36px;background:var(--glass);border:1px solid var(--gborder);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--txt2);font-size:.86rem;transition:all .3s;}
+.soc-l:hover{background:var(--gold);border-color:var(--gold);color:#000;transform:translateY(-3px);}
+.ft-col h4{font-family:var(--fD);font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txt);margin-bottom:16px;}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ft-links a{font-size:.83rem;color:var(--txt2);transition:color .3s;display:flex;align-items:center;gap:7px;}
+.ft-links a::before{content:'';display:block;width:9px;height:1px;background:var(--gold);transition:width .3s;}
+.ft-links a:hover{color:var(--gold);}
+.ft-links a:hover::before{width:15px;}
+.ft-btm{padding:18px 5%;border-top:1px solid var(--gborder);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:13px;max-width:1200px;margin:0 auto;}
+.ft-copy{font-size:.78rem;color:var(--txt3);}
+.ft-copy span{color:var(--gold);}
+.ft-pol{display:flex;gap:20px;}
+.ft-pol a{font-size:.78rem;color:var(--txt3);transition:color .3s;}
+.ft-pol a:hover{color:var(--gold);}
+#wa-float{position:fixed;bottom:26px;right:26px;z-index:9500;display:flex;flex-direction:column;align-items:flex-end;gap:9px;}
+.wa-bbl{background:#1a1a1a;border:1px solid rgba(37,211,102,0.3);color:var(--txt);font-size:.78rem;font-weight:600;padding:8px 13px;border-radius:16px 16px 4px 16px;white-space:nowrap;opacity:0;transform:translateX(16px) scale(.9);transition:all .3s;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.wa-bbl.show{opacity:1;transform:translateX(0) scale(1);}
+.wa-fbtn{width:56px;height:56px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 6px 26px rgba(37,211,102,0.42);transition:all .3s;animation:waBP 3s ease-in-out infinite;}
+@keyframes waBP{0%,100%{box-shadow:0 6px 26px rgba(37,211,102,0.42);}50%{box-shadow:0 6px 52px rgba(37,211,102,0.72);}}
+.wa-fbtn:hover{transform:scale(1.1);background:var(--wa2);}
+#bk-top{position:fixed;bottom:96px;right:26px;width:40px;height:40px;background:var(--glass);border:1px solid var(--gborder);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);cursor:pointer;z-index:9400;opacity:0;transform:translateY(16px);transition:all .3s;font-size:.82rem;backdrop-filter:blur(10px);}
+#bk-top.show{opacity:1;transform:translateY(0);}
+#bk-top:hover{background:var(--gold);color:#000;border-color:var(--gold);transform:translateY(-4px);}
+.mob-bnav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9300;background:rgba(10,10,10,.96);backdrop-filter:blur(20px);border-top:1px solid var(--gborder);padding:9px 0 16px;}
+.mbn{display:flex;justify-content:space-around;}
+.mbn-i{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--txt2);transition:color .3s;}
+.mbn-i i{font-size:1.1rem;}
+.mbn-i span{font-size:.56rem;font-family:var(--fU);letter-spacing:1px;text-transform:uppercase;}
+.mbn-i:hover,.mbn-i.act{color:var(--gold);}
+body.lm{--bg:#f3f3f3;--bg2:#e9e9e9;--bg3:#ddd;--txt:#0f0f0f;--txt2:#555;--txt3:#888;--glass:rgba(0,0,0,0.04);--gborder:rgba(0,0,0,0.08);}
+.post-pg-hd{padding:108px 5% 48px;max-width:760px;margin:0 auto;text-align:center;}
+.post-pg-t{font-family:var(--fD);font-size:clamp(1.8rem,4.2vw,3.1rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;}
+.post-pg-m{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--txt2);margin-bottom:26px;}
+.post-pg-m span{display:flex;align-items:center;gap:5px;}
+.post-pg-m i{color:var(--gold);}
+.post-thumb{max-width:860px;margin:0 auto 48px;padding:0 5%;}
+.post-thumb img{width:100%;border-radius:var(--r2);}
+.post-bdy{max-width:730px;margin:0 auto;padding:0 5% 68px;font-size:1rem;line-height:1.9;color:var(--txt2);}
+.post-bdy h2,.post-bdy h3{font-family:var(--fD);color:var(--txt);margin:34px 0 13px;}
+.post-bdy p{margin-bottom:17px;}
+.post-bdy img{width:100%;border-radius:var(--r);margin:20px 0;}
+.post-bdy a{color:var(--gold);}
+@media(max-width:1024px){
+.port-item:nth-child(1){grid-column:span 12;}
+.port-item:nth-child(2){grid-column:span 12;}
+.port-item:nth-child(3){grid-column:span 6;}
+.port-item:nth-child(4){grid-column:span 6;}
+.port-item:nth-child(5){grid-column:span 12;}
+.about-w{grid-template-columns:1fr;gap:42px;}
+.cnt-row{grid-template-columns:repeat(2,1fr);}
+.ft-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+section{padding:62px 5%;}
+.nav-links{display:none;}
+.n-burger{display:flex;}
+.h-btns{flex-direction:column;align-items:center;}
+.h-stats{gap:24px;}
+.port-grid{grid-template-columns:1fr;}
+.port-item:nth-child(n){grid-column:span 1;}
+.proc-steps{grid-template-columns:1fr 1fr;gap:26px;}
+.proc-line{display:none;}
+.con-w{grid-template-columns:1fr;}
+.ft-top{grid-template-columns:1fr;gap:26px;}
+.ft-btm{flex-direction:column;text-align:center;}
+#ga-cursor-dot,#ga-cursor-ring{display:none;}
+.mob-bnav{display:block;}
+.cnt-row{grid-template-columns:repeat(2,1fr);}
+#bk-top{bottom:80px;}
+#wa-float{bottom:80px;right:13px;}
+}
+@media(max-width:480px){
+.proc-steps{grid-template-columns:1fr;}
+.about-badge{right:0;bottom:-7px;}
+.test-c{padding:26px 18px;}
+}
+]]></b:skin>
+</head>
+<body>
+<div id='ga-progress'/>
+<div id='ga-loader'>
+  <div class='ldr-wrap'>
+    <img alt='GA Istovia' class='ldr-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibkrTsW51aMeeeaFzFBC-hcVzslgbC-_HHIDXpJqX-5JotL1vIv8vow4P1B_0xaNSAEf-B-08JR6eYPoZvNiqpW652DHVlJdzuMNlYOk2wkHYRHCMksJ5fUJUJ1k47iSyjotwRTK2RtHJZNw_LvbupCcduPytCmMwTZod4qCVHS-VQtHi0rkc6UzpO_3mH/s320/cropped_circle_image.png'/>
+    <div class='ldr-ring'/>
+  </div>
+  <div class='ldr-name'>GA ISTOVIA</div>
+  <div class='ldr-sub'>Premium Digital Studio</div>
+  <div class='ldr-bar'><div class='ldr-fill'/></div>
+</div>
+<div id='ga-cursor-dot'/>
+<div id='ga-cursor-ring'/>
+<nav id='ga-nav'>
+  <a class='nlogo-w' href='/'>
+    <img alt='GA Istovia' class='nlogo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibkrTsW51aMeeeaFzFBC-hcVzslgbC-_HHIDXpJqX-5JotL1vIv8vow4P1B_0xaNSAEf-B-08JR6eYPoZvNiqpW652DHVlJdzuMNlYOk2wkHYRHCMksJ5fUJUJ1k47iSyjotwRTK2RtHJZNw_LvbupCcduPytCmMwTZod4qCVHS-VQtHi0rkc6UzpO_3mH/s320/cropped_circle_image.png'/>
+    <span class='nlogo-t'>GA ISTOVIA</span>
+  </a>
+  <ul class='nav-links'>
+    <li><a href='#services'>Services</a></li>
+    <li><a href='#portfolio'>Portfolio</a></li>
+    <li><a href='#about'>About</a></li>
+    <li><a href='#process'>Process</a></li>
+    <li><a href='#testimonials'>Reviews</a></li>
+    <li><a href='#contact'>Contact</a></li>
+    <li><a class='nav-cta' href='https://wa.me/255792207616'>Start Project</a></li>
+  </ul>
+  <div class='nav-r'>
+    <div class='n-theme' id='theme-btn'><i class='fas fa-sun'/></div>
+    <div class='n-burger' id='nav-burger'><span/><span/><span/></div>
+  </div>
+</nav>
+<div class='mob-nav' id='mob-nav'>
+  <a href='#services' onclick='cMN()'>Services</a>
+  <a href='#portfolio' onclick='cMN()'>Portfolio</a>
+  <a href='#about' onclick='cMN()'>About</a>
+  <a href='#process' onclick='cMN()'>Process</a>
+  <a href='#contact' onclick='cMN()'>Contact</a>
+  <a class='btn-wa mob-wa' href='https://wa.me/255792207616' rel='noopener'><i class='fab fa-whatsapp'/> WhatsApp Us</a>
+</div>
+<section id='hero'>
+  <div class='hero-bg'>
+    <div class='h-grid'/>
+    <div class='h-orb-a'/>
+    <div class='h-orb-b'/>
+    <div class='h-pts' id='h-pts'/>
+  </div>
+  <div class='h-content'>
+    <div class='h-badge'><div class='h-bdot'/>Premium Digital Studio &#8212; East Africa</div>
+    <div class='h-brand-show'>
+      <img alt='GA Istovia' class='h-brand-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibkrTsW51aMeeeaFzFBC-hcVzslgbC-_HHIDXpJqX-5JotL1vIv8vow4P1B_0xaNSAEf-B-08JR6eYPoZvNiqpW652DHVlJdzuMNlYOk2wkHYRHCMksJ5fUJUJ1k47iSyjotwRTK2RtHJZNw_LvbupCcduPytCmMwTZod4qCVHS-VQtHi0rkc6UzpO_3mH/s320/cropped_circle_image.png'/>
+      <div>
+        <div class='h-brand-nm'>GA ISTOVIA</div>
+        <div class='h-brand-sub'>Premium Digital Studio</div>
+      </div>
+    </div>
+    <h1 class='h1'>
+      <span class='l1'>Crafting Premium</span>
+      <span class='l2-wrap'><span class='l2' id='h-type'/></span>
+    </h1>
+    <p class='h-sub'>We build luxury websites, ecommerce platforms and premium digital brands for modern businesses across East Africa and beyond.</p>
+    <div class='h-btns'>
+      <a class='btn-pri' href='https://wa.me/255792207616'><span><i class='fas fa-rocket'/> Start Your Project</span></a>
+      <a class='btn-sec' href='#portfolio'><i class='fas fa-eye'/> View Portfolio</a>
+      <a class='btn-wa' href='https://wa.me/255749694188' rel='noopener'><i class='fab fa-whatsapp'/> WhatsApp Us</a>
+    </div>
+    <div class='h-stats'>
+      <div style='text-align:center;'><div class='h-sn cval' data-t='50'>0</div><div class='h-sl'>Projects</div></div>
+      <div style='text-align:center;'><div class='h-sn cval' data-t='40'>0</div><div class='h-sl'>Clients</div></div>
+      <div style='text-align:center;'><div class='h-sn cval' data-t='3'>0</div><div class='h-sl'>Years</div></div>
+      <div style='text-align:center;'><div class='h-sn cval' data-t='5'>0</div><div class='h-sl'>Active</div></div>
+    </div>
+  </div>
+</section>
+<div class='mq-strip'>
+  <div class='mq-inner'>
+    <span class='mq-item'><i class='fas fa-star'/>Premium Blogger Themes</span>
+    <span class='mq-item'><i class='fas fa-star'/>Ecommerce Stores</span>
+    <span class='mq-item'><i class='fas fa-star'/>Automotive Websites</span>
+    <span class='mq-item'><i class='fas fa-star'/>UI/UX Design</span>
+    <span class='mq-item'><i class='fas fa-star'/>Branding</span>
+    <span class='mq-item'><i class='fas fa-star'/>Landing Pages</span>
+    <span class='mq-item'><i class='fas fa-star'/>SEO Optimization</span>
+    <span class='mq-item'><i class='fas fa-star'/>Mobile Optimization</span>
+    <span class='mq-item'><i class='fas fa-star'/>Premium Blogger Themes</span>
+    <span class='mq-item'><i class='fas fa-star'/>Ecommerce Stores</span>
+    <span class='mq-item'><i class='fas fa-star'/>Automotive Websites</span>
+    <span class='mq-item'><i class='fas fa-star'/>UI/UX Design</span>
+    <span class='mq-item'><i class='fas fa-star'/>Branding</span>
+    <span class='mq-item'><i class='fas fa-star'/>Landing Pages</span>
+    <span class='mq-item'><i class='fas fa-star'/>SEO Optimization</span>
+    <span class='mq-item'><i class='fas fa-star'/>Mobile Optimization</span>
+  </div>
+</div>
+<section id='services'>
+  <div class='svc-hd reveal'>
+    <div class='s-tag'><i class='fas fa-layer-group'/>What We Do</div>
+    <h2 class='s-title'>Premium <span class='g'>Services</span></h2>
+    <p class='s-sub'>World-class digital solutions for modern businesses that demand excellence.</p>
+  </div>
+  <div class='svc-grid stagger'>
+    <div class='svc-c'><div class='svc-num'>01</div><div class='svc-icon'><i class='fab fa-blogger'/></div><h3 class='svc-n'>Premium Blogger Websites</h3><p class='svc-d'>Custom luxury Blogger themes built for performance, beauty, and real conversions.</p></div>
+    <div class='svc-c'><div class='svc-num'>02</div><div class='svc-icon'><i class='fas fa-store'/></div><h3 class='svc-n'>Ecommerce Stores</h3><p class='svc-d'>Fully featured online stores with stunning layouts and seamless checkout experiences.</p></div>
+    <div class='svc-c'><div class='svc-num'>03</div><div class='svc-icon'><i class='fas fa-car'/></div><h3 class='svc-n'>Automotive Websites</h3><p class='svc-d'>Dynamic vehicle listing platforms and dealership websites that drive real sales.</p></div>
+    <div class='svc-c'><div class='svc-num'>04</div><div class='svc-icon'><i class='fas fa-tshirt'/></div><h3 class='svc-n'>Fashion Online Stores</h3><p class='svc-d'>Luxury fashion ecommerce with editorial-grade design that tells your brand story.</p></div>
+    <div class='svc-c'><div class='svc-num'>05</div><div class='svc-icon'><i class='fas fa-bullseye'/></div><h3 class='svc-n'>Landing Pages</h3><p class='svc-d'>High-converting pages engineered to turn visitors into loyal paying customers.</p></div>
+    <div class='svc-c'><div class='svc-num'>06</div><div class='svc-icon'><i class='fas fa-pencil-ruler'/></div><h3 class='svc-n'>UI/UX Design</h3><p class='svc-d'>Strategic design that creates intuitive journeys and delightful user interactions.</p></div>
+    <div class='svc-c'><div class='svc-num'>07</div><div class='svc-icon'><i class='fas fa-paint-brush'/></div><h3 class='svc-n'>Branding</h3><p class='svc-d'>Complete brand identity systems including logos, colors, and full guidelines.</p></div>
+    <div class='svc-c'><div class='svc-num'>08</div><div class='svc-icon'><i class='fas fa-mobile-alt'/></div><h3 class='svc-n'>Mobile Optimization</h3><p class='svc-d'>Pixel-perfect mobile experiences that load fast on every device.</p></div>
+    <div class='svc-c'><div class='svc-num'>09</div><div class='svc-icon'><i class='fas fa-search'/></div><h3 class='svc-n'>SEO Optimization</h3><p class='svc-d'>Data-driven SEO that ranks your website and attracts organic traffic.</p></div>
+  </div>
+</section>
+<section id='portfolio'>
+  <div class='port-hd'>
+    <div>
+      <div class='s-tag reveal'><i class='fas fa-briefcase'/>Our Work</div>
+      <h2 class='s-title reveal'>Selected <span class='g'>Portfolio</span></h2>
+    </div>
+    <div class='p-filters reveal'>
+      <button class='flt-b active'>All</button>
+      <button class='flt-b'>Ecommerce</button>
+      <button class='flt-b'>Automotive</button>
+      <button class='flt-b'>Blogger</button>
+      <button class='flt-b'>Branding</button>
+    </div>
+  </div>
+  <div class='port-grid'>
+    <div class='port-item reveal'><div class='port-img'><div class='port-img-in' style='background:#0f0f0f;'><img alt='Fluvvy Collection' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikcnkhVNNutTNoQ_KNjVCkkw-bKrmFtNjPBpND73Mwf5hMtb76N8ZVbOe0IKqhxbTBE-bxlpC7_Wd2YuHGMmMg8n5ehzA6oQWFHPJouu-Hi5s0HvmOLmNy8HN0Yree_B0PJOFb5RMiQa239z0xJGXzIZfCdjxt2p7LiX7w89kQ-7Kfu4udtf1j3GlmB6TB/s320/001.png' style='width:100%;height:100%;object-fit:cover;transition:transform .6s;'/></div></div><div class='port-ov'><div><div class='port-cat'>Fashion Ecommerce</div><div class='port-nm'>Fluvvy Collection</div></div></div><a class='port-lnk' href='https://wa.me/255792207616' rel='noopener'><i class='fas fa-external-link-alt'/></a></div>
+    <div class='port-item reveal'><div class='port-img'><div class='port-img-in' style='background:#0f0f0f;'><img alt='Magari Mazuri TZ' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX773Uyq9tjtO4yGIU0iBqK70cPrXhxutzSbs_2TMrv8Mx5Yo5P9Mrfmc1kts6umKXDwb22uhib8w1FcMSgbKbQpONdf1DtBODSveaJuPajPna-NGBfIa16XT6LYNwXh9F5DeO9V2Ryv7RliIJ_w9sO6akeE1CrgI4q6r-u3KlUuiwm0yQla5DKVWasqw7/s320/picha%20004.png' style='width:100%;height:100%;object-fit:cover;transition:transform .6s;'/></div></div><div class='port-ov'><div><div class='port-cat'>Automotive</div><div class='port-nm'>Magari Mazuri TZ</div></div></div><a class='port-lnk' href='https://magarimazuritz.blogspot.com/' rel='noopener'><i class='fas fa-external-link-alt'/></a></div>
+    <div class='port-item reveal'><div class='port-img'><div class='port-img-in' style='background:#0f0f0f;'><img alt='Geozzy Store' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdLo9V66kPWIeSeQ51mJwx8SJawlZ0LcSxBFrt1QKGPE1haAi27zYOcy05LTZ8im9NJkN4bko7nwuxN8uizCTfrd1aiPnf4T0q331o4M5reB31lUq3_LCHA_E9ak3sPs84n6kEsvNvuiU4A5N5Z2mqjTYqi4J-qn9BHgZA8f8ix9a51Q54M61pOo4275A4/s320/0101.png' style='width:100%;height:100%;object-fit:cover;transition:transform .6s;'/></div></div><div class='port-ov'><div><div class='port-cat'>Ecommerce</div><div class='port-nm'>Geozzy Store</div></div></div><a class='port-lnk' href='https://geozzystore.blogspot.com/' rel='noopener'><i class='fas fa-external-link-alt'/></a></div>
+    <div class='port-item reveal'><div class='port-img'><div class='port-img-in' style='background:#0f0f0f;'><img alt='246 Online' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjowwjhWhi6cagPMSP8kGdAsf_-fihrNRsKYG7QaqtZDKq623ZiOsRD9FTRGzCG50AHcAWqpgUXB2ftx4kWezQNqthX34QLGoVa59KfRTRGATO92UdlhNaCsyOSwtbhQXa27104fCXmz4my3EzWdUnnrOW5jhZD4vpuI0_tMNDIZZla6Hyo6xqCC9qoEO_D/s320/Image%2001%20(10).png' style='width:100%;height:100%;object-fit:cover;transition:transform .6s;'/></div></div><div class='port-ov'><div><div class='port-cat'>Business Website</div><div class='port-nm'>246 Online</div></div></div><a class='port-lnk' href='https://www.246online.site/' rel='noopener'><i class='fas fa-external-link-alt'/></a></div>
+    <div class='port-item reveal'><div class='port-img'><div class='port-img-in' style='background:#0f0f0f;'><img alt='Premium Landing Page' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikcnkhVNNutTNoQ_KNjVCkkw-bKrmFtNjPBpND73Mwf5hMtb76N8ZVbOe0IKqhxbTBE-bxlpC7_Wd2YuHGMmMg8n5ehzA6oQWFHPJouu-Hi5s0HvmOLmNy8HN0Yree_B0PJOFb5RMiQa239z0xJGXzIZfCdjxt2p7LiX7w89kQ-7Kfu4udtf1j3GlmB6TB/s320/001.png' style='width:100%;height:100%;object-fit:cover;transition:transform .6s;'/></div></div><div class='port-ov'><div><div class='port-cat'>Landing Page</div><div class='port-nm'>Premium Campaign</div></div></div><a class='port-lnk' href='https://wa.me/255792207616' rel='noopener'><i class='fas fa-external-link-alt'/></a></div>
+  </div>
+  <b:if cond='data:view.isHomepage'>
+    <div style='margin-top:46px;'>
+      <div style='text-align:center;margin-bottom:26px;'>
+        <div class='s-tag' style='justify-content:center;'><i class='fas fa-rss'/>Latest Projects</div>
+        <h3 class='s-title' style='font-size:1.85rem;'>From Our <span class='g'>Blog</span></h3>
+      </div>
+      <div class='bpc-grid stagger'>
+        <b:loop values='data:posts' var='post'>
+          <a class='bpc' expr:href='data:post.url'>
+            <div class='bpc-img'>
+              <b:if cond='data:post.featuredImage'>
+                <img expr:alt='data:post.title' expr:src='data:post.featuredImage' loading='lazy'/>
+              <b:else/>
+                <div style='font-size:2.2rem;color:rgba(212,175,55,0.13);'><i class='fas fa-image'/></div>
+              </b:if>
+            </div>
+            <div class='bpc-body'>
+              <span class='bpc-lbl'>Project</span>
+              <div class='bpc-title'><data:post.title/></div>
+              <div class='bpc-snip'><data:post.snippet/></div>
+              <div class='bpc-ft'>
+                <span class='bpc-dt'><i class='fas fa-calendar'/> <data:post.date/></span>
+                <span style='color:var(--gold);'><i class='fas fa-arrow-right'/></span>
+              </div>
+            </div>
+          </a>
+        </b:loop>
+      </div>
+    </div>
+  </b:if>
+</section>
+<section id='about'>
+  <div class='about-w'>
+    <div class='about-vis reveal-l'>
+      <div class='about-card'>
+        <div class='about-in'>
+          <img alt='GA Istovia Team' class='about-img-main' src='https://blogger.googleusercontent.com/img/a/AVvXsEiwWvbNjo-FhydoZIRT01-44hD36P6rCXHpQ1NTxSlcbc1bzpeO2tUIVMgDWuZGImQCNfzGUb9BxzKY3Yf7W-IELBi3hCdoanegHyXyo1sx-4hnqoM16ThoA1guxOO-U7KMmCnJhtKoAnWtjzAJB-3QjvBq6vRgM2EPahxLD2_ySl_SLmrk_MT0y0h7pJSW'/>
+          <img alt='GA Istovia' class='about-logo-img' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMLnIw6s7BToi3CMWG3QIaWXUz4pMH61zl2VvEEOyCyT8yvk-kVjr-Xc66q3py6ybRQ8CCISa1QoutadDqPuJZGBBrPIeZhtES3WOayIftyjK4R7ZCVTHSo-Mt4Trdz0M_HFHQbDU3BtM4U9_p-igbBKDrV6xU7BtLPxvdnO-crswPAhuasZdN4gWbnjPa/s320/Istovia.png'/>
+          <div style='text-align:center;font-family:var(--fD);font-size:.72rem;font-weight:700;letter-spacing:3px;color:var(--txt2);text-transform:uppercase;'>Premium Digital Studio</div>
+          <div class='about-wm'>GA</div>
+        </div>
+      </div>
+      <div class='about-badge'><div class='ab-n'>3+</div><div class='ab-l'>Years of<br/>Excellence</div></div>
+    </div>
+    <div class='reveal-r'>
+      <div class='s-tag'><i class='fas fa-info-circle'/>About Us</div>
+      <h2 class='s-title'>We Are <span class='g'>GA Istovia</span></h2>
+      <div class='s-div'/>
+      <p class='about-txt'>GA Istovia is a premium digital studio based in East Africa, specializing in luxury website development, ecommerce solutions, and creative digital experiences. We believe every brand deserves a world-class digital presence.</p>
+      <p class='about-txt'>From premium Blogger themes to fully custom ecommerce platforms, our team combines technical excellence with artistic vision to build websites that impress, convert, and grow your business.</p>
+      <div class='af-grid'>
+        <div class='af'><div class='af-i'><i class='fas fa-check'/></div><div class='af-t'><strong>Premium Quality</strong><span>International standard</span></div></div>
+        <div class='af'><div class='af-i'><i class='fas fa-bolt'/></div><div class='af-t'><strong>Fast Delivery</strong><span>On-time completion</span></div></div>
+        <div class='af'><div class='af-i'><i class='fas fa-headset'/></div><div class='af-t'><strong>24/7 Support</strong><span>Always available</span></div></div>
+        <div class='af'><div class='af-i'><i class='fas fa-shield-alt'/></div><div class='af-t'><strong>Trusted Partner</strong><span>Long-term relationships</span></div></div>
+      </div>
+      <a class='btn-pri' href='https://wa.me/255792207616'><span><i class='fas fa-handshake'/> Work With Us</span></a>
+    </div>
+  </div>
+  <div class='cnt-row stagger'>
+    <div class='cnt-c'><div class='cnt-n cval' data-t='50'>0</div><div class='cnt-l'>Projects Completed</div></div>
+    <div class='cnt-c'><div class='cnt-n cval' data-t='40'>0</div><div class='cnt-l'>Happy Clients</div></div>
+    <div class='cnt-c'><div class='cnt-n cval' data-t='5'>0</div><div class='cnt-l'>Active Projects</div></div>
+    <div class='cnt-c'><div class='cnt-n cval' data-t='3'>0</div><div class='cnt-l'>Years Experience</div></div>
+  </div>
+</section>
+<section id='process'>
+  <div class='proc-hd reveal'>
+    <div class='s-tag' style='justify-content:center;'><i class='fas fa-cogs'/>How We Work</div>
+    <h2 class='s-title'>Our <span class='g'>Process</span></h2>
+    <p class='s-sub'>A streamlined workflow engineered for quality, speed, and satisfaction.</p>
+  </div>
+  <div class='proc-steps stagger'>
+    <div class='proc-line'/>
+    <div class='proc-step'><div class='ps-w'><div class='ps-n'>01</div><div class='ps-badge'><i class='fas fa-lightbulb'/></div></div><h3 class='ps-t'>Strategy</h3><p class='ps-d'>We dive into your goals and audience to craft a winning digital strategy.</p></div>
+    <div class='proc-step'><div class='ps-w'><div class='ps-n'>02</div><div class='ps-badge'><i class='fas fa-pencil-ruler'/></div></div><h3 class='ps-t'>Design</h3><p class='ps-d'>Stunning conversion-focused designs that reflect your premium brand identity.</p></div>
+    <div class='proc-step'><div class='ps-w'><div class='ps-n'>03</div><div class='ps-badge'><i class='fas fa-code'/></div></div><h3 class='ps-t'>Development</h3><p class='ps-d'>Clean, fast, SEO-optimized code built with precision and best practices.</p></div>
+    <div class='proc-step'><div class='ps-w'><div class='ps-n'>04</div><div class='ps-badge'><i class='fas fa-rocket'/></div></div><h3 class='ps-t'>Launch</h3><p class='ps-d'>Smooth launch with full testing, optimization, and ongoing growth support.</p></div>
+  </div>
+</section>
+<section id='testimonials'>
+  <div class='test-hd reveal'>
+    <div class='s-tag' style='justify-content:center;'><i class='fas fa-quote-right'/>Client Reviews</div>
+    <h2 class='s-title'>What Clients <span class='g'>Say</span></h2>
+  </div>
+  <div class='test-slider reveal'>
+    <div class='test-track' id='test-track'>
+      <div class='test-c'>
+        <div class='test-stars'><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/></div>
+        <p class='test-txt'>&quot;GA Istovia completely transformed our online presence. The website they built is breathtaking &#8212; fast, beautiful, and our sales increased by 200% in the first month. Truly world-class work.&quot;</p>
+        <div class='test-auth'><div class='test-av'>AM</div><div><div class='test-an'>Ahmed Malik</div><div class='test-ar'>CEO, Luxury Fashion Brand</div></div></div>
+      </div>
+      <div class='test-c'>
+        <div class='test-stars'><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/></div>
+        <p class='test-txt'>&quot;I needed an automotive website that handles hundreds of listings while looking premium. GA Istovia delivered beyond my expectations. Incredible design, my clients love it every single day.&quot;</p>
+        <div class='test-auth'><div class='test-av'>JK</div><div><div class='test-an'>James Kimani</div><div class='test-ar'>Owner, Magari Mazuri TZ</div></div></div>
+      </div>
+      <div class='test-c'>
+        <div class='test-stars'><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/></div>
+        <p class='test-txt'>&quot;Professional, fast, and incredibly talented. They understood my vision immediately and executed it perfectly. Our store now looks as good as any international brand. Highly recommended!&quot;</p>
+        <div class='test-auth'><div class='test-av'>SP</div><div><div class='test-an'>Sarah Patel</div><div class='test-ar'>Founder, Premium Online Store</div></div></div>
+      </div>
+    </div>
+    <div class='sl-ctrl'>
+      <button class='sl-btn' id='sl-prev'><i class='fas fa-chevron-left'/></button>
+      <div class='sl-dots'>
+        <div class='sl-dot active' data-i='0'/>
+        <div class='sl-dot' data-i='1'/>
+        <div class='sl-dot' data-i='2'/>
+      </div>
+      <button class='sl-btn' id='sl-next'><i class='fas fa-chevron-right'/></button>
+    </div>
+  </div>
+</section>
+<section id='technology'>
+  <div class='tech-hd reveal'>
+    <div class='s-tag' style='justify-content:center;'><i class='fas fa-microchip'/>Our Stack</div>
+    <h2 class='s-title'>Technologies &amp; <span class='g'>Expertise</span></h2>
+  </div>
+  <div class='tech-grid stagger'>
+    <div class='tech-item'><span class='tech-ic'><i class='fab fa-blogger'/></span><div class='tech-nm'>Blogger</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fab fa-html5'/></span><div class='tech-nm'>HTML5</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fab fa-css3-alt'/></span><div class='tech-nm'>CSS3</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fab fa-js-square'/></span><div class='tech-nm'>JavaScript</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fas fa-pencil-ruler'/></span><div class='tech-nm'>UI/UX</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fas fa-search'/></span><div class='tech-nm'>SEO</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fas fa-mobile-alt'/></span><div class='tech-nm'>Responsive</div></div>
+    <div class='tech-item'><span class='tech-ic'><i class='fas fa-bolt'/></span><div class='tech-nm'>Performance</div></div>
+  </div>
+</section>
+<section id='wa-cta'>
+  <div class='wa-box reveal'>
+    <i class='fab fa-whatsapp wa-big-i'/>
+    <h2 class='wa-t'>Ready to Start Your<br/><span style='color:#25D366;'>Dream Project?</span></h2>
+    <p class='wa-s'>Message us directly on WhatsApp and we will respond within minutes.<br/>Let&#39;s build something extraordinary together.</p>
+    <a class='btn-wa-big' href='https://wa.me/255792207616?text=Hello%20GA%20Istovia%2C%20I%20want%20to%20start%20a%20project' rel='noopener' target='_blank'><i class='fab fa-whatsapp'/>Start Your Project on WhatsApp</a>
+    <br/>
+    <a class='btn-wa-big' href='https://wa.me/255749694188?text=Hello%20GA%20Istovia%2C%20I%20want%20to%20start%20a%20project' rel='noopener' style='margin-top:11px;background:rgba(37,211,102,0.7);' target='_blank'><i class='fab fa-whatsapp'/>Alt: +255 749 694 188</a>
+    <p class='wa-note'><i class='fas fa-clock'/> Average response: under 5 minutes</p>
+  </div>
+</section>
+<section id='contact'>
+  <div class='con-w'>
+    <div class='reveal-l'>
+      <div class='s-tag'><i class='fas fa-envelope'/>Get In Touch</div>
+      <h2 class='s-title'>Let&#39;s <span class='g'>Talk</span></h2>
+      <p style='color:var(--txt2);font-size:.92rem;line-height:1.85;'>Ready to take your business to the next level? We would love to hear about your project.</p>
+      <div class='con-items'>
+        <a class='con-item' href='https://wa.me/255792207616' rel='noopener' target='_blank'><div class='ci-ic'><i class='fab fa-whatsapp'/></div><div class='ci-t'><strong>WhatsApp (Main)</strong><span>+255 792 207 616</span></div></a>
+        <a class='con-item' href='https://wa.me/255749694188' rel='noopener' target='_blank'><div class='ci-ic'><i class='fab fa-whatsapp'/></div><div class='ci-t'><strong>WhatsApp (Alt)</strong><span>+255 749 694 188</span></div></a>
+        <a class='con-item' href='mailto:gaistovia@gmail.com'><div class='ci-ic'><i class='fas fa-envelope'/></div><div class='ci-t'><strong>Email</strong><span>gaistovia@gmail.com</span></div></a>
+        <div class='con-item'><div class='ci-ic'><i class='fas fa-map-marker-alt'/></div><div class='ci-t'><strong>Location</strong><span>East Africa &#8212; Serving Globally</span></div></div>
+      </div>
+    </div>
+    <div class='reveal-r'>
+      <div class='con-form'>
+        <h3>Send a Message</h3>
+        <div class='fg'><label>Your Name</label><input id='c-name' placeholder='John Doe' type='text'/></div>
+        <div class='fg'><label>Email Address</label><input id='c-email' placeholder='john@example.com' type='email'/></div>
+        <div class='fg'><label>Service Needed</label>
+          <select id='c-service'>
+            <option>Premium Blogger Website</option>
+            <option>Ecommerce Store</option>
+            <option>Automotive Website</option>
+            <option>Landing Page</option>
+            <option>UI/UX Design</option>
+            <option>Branding</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class='fg'><label>Your Message</label><textarea id='c-msg' placeholder='Tell us about your project...'/></div>
+        <button class='f-sub-btn' id='f-sub'><i class='fab fa-whatsapp'/> Send via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id='ga-footer'>
+  <div class='ft-top'>
+    <div class='ft-brand'>
+      <div class='ft-logo-w'>
+        <img alt='GA Istovia' class='ft-logo-i' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibkrTsW51aMeeeaFzFBC-hcVzslgbC-_HHIDXpJqX-5JotL1vIv8vow4P1B_0xaNSAEf-B-08JR6eYPoZvNiqpW652DHVlJdzuMNlYOk2wkHYRHCMksJ5fUJUJ1k47iSyjotwRTK2RtHJZNw_LvbupCcduPytCmMwTZod4qCVHS-VQtHi0rkc6UzpO_3mH/s320/cropped_circle_image.png'/>
+        <span class='ft-logo-t'>GA ISTOVIA</span>
+      </div>
+      <p>Premium digital studio crafting luxury websites, ecommerce stores, and digital experiences for modern businesses across East Africa and beyond.</p>
+      <div class='ft-soc'>
+        <a class='soc-l' href='https://wa.me/255792207616' rel='noopener' target='_blank'><i class='fab fa-whatsapp'/></a>
+        <a class='soc-l' href='mailto:gaistovia@gmail.com'><i class='fas fa-envelope'/></a>
+        <a class='soc-l' href='#'><i class='fab fa-instagram'/></a>
+        <a class='soc-l' href='#'><i class='fab fa-facebook'/></a>
+        <a class='soc-l' href='#'><i class='fab fa-twitter'/></a>
+      </div>
+    </div>
+    <div class='ft-col'>
+      <h4>Services</h4>
+      <ul class='ft-links'>
+        <li><a href='#services'>Blogger Websites</a></li>
+        <li><a href='#services'>Ecommerce Stores</a></li>
+        <li><a href='#services'>Automotive Sites</a></li>
+        <li><a href='#services'>Landing Pages</a></li>
+        <li><a href='#services'>UI/UX Design</a></li>
+        <li><a href='#services'>Branding</a></li>
+      </ul>
+    </div>
+    <div class='ft-col'>
+      <h4>Company</h4>
+      <ul class='ft-links'>
+        <li><a href='#about'>About Us</a></li>
+        <li><a href='#portfolio'>Portfolio</a></li>
+        <li><a href='#process'>Our Process</a></li>
+        <li><a href='#testimonials'>Reviews</a></li>
+        <li><a href='#contact'>Contact</a></li>
+      </ul>
+    </div>
+    <div class='ft-col'>
+      <h4>Contact</h4>
+      <ul class='ft-links'>
+        <li><a href='https://wa.me/255792207616'>+255 922 207 616</a></li>
+        <li><a href='https://wa.me/255749694188'>+255 749 694 188</a></li>
+        <li><a href='mailto:gaistovia@gmail.com'>gaistovia@gmail.com</a></li>
+        <li><a href='https://wa.me/255792207616'>Start a Project</a></li>
+      </ul>
+      <div style='margin-top:18px;'><a class='btn-wa' href='https://wa.me/255792207616' rel='noopener' style='font-size:.8rem;padding:9px 16px;'><i class='fab fa-whatsapp'/>Chat Now</a></div>
+    </div>
+  </div>
+  <div style='padding:0 5%;'>
+    <div class='ft-btm'>
+      <div class='ft-copy'>&#169; 2026 <span>GA Istovia</span>. All rights reserved. Built with <span style='color:#e74c3c;'>&#9829;</span> in East Africa.</div>
+      <div class='ft-pol'><a href='/p/privacy-policy.html'>Privacy</a><a href='/p/terms.html'>Terms</a><a href='#contact'>Contact</a></div>
+    </div>
+  </div>
+</footer>
+<div id='wa-float'>
+  <div class='wa-bbl' id='wa-bbl'><i class='fab fa-whatsapp' style='color:#25D366;'/> Start Your Project!</div>
+  <a class='wa-fbtn' href='https://wa.me/255792207616?text=Hello%20GA%20Istovia%2C%20I%20want%20to%20start%20a%20project' id='wa-fbtn' rel='noopener' target='_blank'><i class='fab fa-whatsapp'/></a>
+</div>
+<a href='#' id='bk-top'><i class='fas fa-arrow-up'/></a>
+<div class='mob-bnav'>
+  <div class='mbn'>
+    <a class='mbn-i act' href='#hero'><i class='fas fa-home'/><span>Home</span></a>
+    <a class='mbn-i' href='#services'><i class='fas fa-layer-group'/><span>Services</span></a>
+    <a class='mbn-i' href='#portfolio'><i class='fas fa-briefcase'/><span>Work</span></a>
+    <a class='mbn-i' href='https://wa.me/255792207616' rel='noopener'><i class='fab fa-whatsapp'/><span>WhatsApp</span></a>
+    <a class='mbn-i' href='#contact'><i class='fas fa-envelope'/><span>Contact</span></a>
+  </div>
+</div>
+<b:if cond='data:view.isPost'>
+  <div style='padding-top:68px;'>
+    <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+          <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showAuthor'>false</b:widget-setting>
+          <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='timestampLabel'/>
+          <b:widget-setting name='reactionsLabel'/>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>true</b:widget-setting>
+          <b:widget-setting name='postLabelsLabel'/>
+          <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>3</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='top'>
+          <b:loop values='data:posts' var='post'>
+            <b:if cond='data:post.isFirstPost'>
+              <div class='post-pg-hd'>
+                <b:if cond='data:post.labels size gt 0'>
+  <data:post.labels.first.name/>
+</b:if>
+                <h1 class='post-pg-t'><data:post.title/></h1>
+                <div class='post-pg-m'>
+                  <span><i class='fas fa-calendar'/><data:post.date/></span>
+                  <span><i class='fas fa-user'/><data:post.author/></span>
+                </div>
+              </div>
+              <b:if cond='data:post.featuredImage'>
+                <div class='post-thumb'><img expr:alt='data:post.title' expr:src='data:post.featuredImage'/></div>
+              </b:if>
+              <div class='post-bdy'><data:post.body/></div>
+            </b:if>
+          </b:loop>
+        </b:includable>
+        <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+        <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+        <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+        <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+        <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+        <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+        <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+        <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+        <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+        <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+        <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+        <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+        <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+        <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+        <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+        <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+        <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+        <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+        <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+        <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+        <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+        <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+</b:if>
+<script>
+//<![CDATA[
+(function(){window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('ga-loader');if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},650);}},2400);});})();
+(function(){var b=document.getElementById('ga-progress');if(!b)return;window.addEventListener('scroll',function(){var st=document.documentElement.scrollTop;var sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(st/sh*100)+'%';},{passive:true});})();
+(function(){var dot=document.getElementById('ga-cursor-dot');var ring=document.getElementById('ga-cursor-ring');if(!dot||!ring)return;var rx=0,ry=0,mx=0,my=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';},{passive:true});function ar(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar);}ar();document.querySelectorAll('a,button,.svc-c,.tech-item,.port-item,.cnt-c').forEach(function(el){el.addEventListener('mouseenter',function(){document.body.classList.add('chov');});el.addEventListener('mouseleave',function(){document.body.classList.remove('chov');});});})();
+(function(){var nav=document.getElementById('ga-nav');if(!nav)return;window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});})();
+(function(){var btn=document.getElementById('nav-burger');var mn=document.getElementById('mob-nav');if(!btn||!mn)return;btn.addEventListener('click',function(){mn.classList.toggle('open');btn.classList.toggle('open');});})();
+function cMN(){var mn=document.getElementById('mob-nav');var btn=document.getElementById('nav-burger');if(mn)mn.classList.remove('open');if(btn)btn.classList.remove('open');}
+(function(){var c=document.getElementById('h-pts');if(!c)return;for(var i=0;i<16;i++){var p=document.createElement('div');p.className='hpt';var s=Math.random()*2.5+1;p.style.cssText='left:'+Math.random()*100+'%;top:'+(Math.random()*40+100)+'%;width:'+s+'px;height:'+s+'px;animation-duration:'+(Math.random()*13+9)+'s;animation-delay:'+(Math.random()*7)+'s;';c.appendChild(p);}})();
+(function(){var el=document.getElementById('h-type');if(!el)return;var words=['Digital Experiences','Luxury Websites','Ecommerce Stores','Brand Identities','Premium Designs'];var wi=0,ci=0,del=false;function tick(){var w=words[wi];if(!del){el.textContent=w.substring(0,ci+1);ci++;if(ci===w.length){del=true;setTimeout(tick,2000);return;}}else{el.textContent=w.substring(0,ci-1);ci--;if(ci===0){del=false;wi=(wi+1)%words.length;}}setTimeout(tick,del?55:95);}setTimeout(tick,1900);})();
+(function(){var done=[];function anim(el){var t=parseInt(el.getAttribute('data-t'));var start=performance.now();var dur=1700;function upd(now){var p=Math.min((now-start)/dur,1);var e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t)+(t>=3?'+':'');if(p<1)requestAnimationFrame(upd);}requestAnimationFrame(upd);}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting&&done.indexOf(en.target)===-1){done.push(en.target);anim(en.target);}});},{threshold:.5});document.querySelectorAll('.cval').forEach(function(el){io.observe(el);});})();
+(function(){var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting)en.target.classList.add('on');});},{threshold:.1,rootMargin:'0px 0px -28px 0px'});document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.stagger').forEach(function(el){io.observe(el);});})();
+(function(){var track=document.getElementById('test-track');var dots=document.querySelectorAll('.sl-dot');var prev=document.getElementById('sl-prev');var next=document.getElementById('sl-next');if(!track)return;var cur=0,tot=dots.length;function go(i){cur=i;track.style.transform='translateX(-'+(i*100)+'%)';dots.forEach(function(d){d.classList.remove('active');});if(dots[i])dots[i].classList.add('active');}if(next)next.addEventListener('click',function(){go((cur+1)%tot);});if(prev)prev.addEventListener('click',function(){go((cur-1+tot)%tot);});dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.getAttribute('data-i')));});});setInterval(function(){go((cur+1)%tot);},5500);})();
+(function(){var btn=document.getElementById('bk-top');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('show',window.scrollY>400);},{passive:true});btn.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});})();
+(function(){var bbl=document.getElementById('wa-bbl');var fbtn=document.getElementById('wa-fbtn');if(!bbl)return;setTimeout(function(){bbl.classList.add('show');},3500);setTimeout(function(){bbl.classList.remove('show');},9000);if(fbtn){fbtn.addEventListener('mouseenter',function(){bbl.classList.add('show');});fbtn.addEventListener('mouseleave',function(){bbl.classList.remove('show');});}})();
+(function(){var btn=document.getElementById('f-sub');if(!btn)return;btn.addEventListener('click',function(){var n=document.getElementById('c-name').value.trim();var e=document.getElementById('c-email').value.trim();var s=document.getElementById('c-service').value;var m=document.getElementById('c-msg').value.trim();if(!n||!m){alert('Please fill in your name and message.');return;}var t='Hello%20GA%20Istovia!%0A%0AName:%20'+encodeURIComponent(n)+'%0AEmail:%20'+encodeURIComponent(e)+'%0AService:%20'+encodeURIComponent(s)+'%0AMessage:%20'+encodeURIComponent(m);window.open('https://wa.me/255792207616?text='+t,'_blank');});})();
+(function(){var btn=document.getElementById('theme-btn');if(!btn)return;var ic=btn.querySelector('i');btn.addEventListener('click',function(){document.body.classList.toggle('lm');if(document.body.classList.contains('lm')){ic.className='fas fa-moon';}else{ic.className='fas fa-sun';}});})();
+(function(){document.querySelectorAll('.flt-b').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.flt-b').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});});})();
+(function(){document.querySelectorAll('.btn-pri,.btn-wa-big').forEach(function(btn){btn.addEventListener('mousemove',function(e){var r=btn.getBoundingClientRect();var x=e.clientX-r.left-r.width/2;var y=e.clientY-r.top-r.height/2;btn.style.transform='translate('+x*.1+'px,'+y*.15+'px) translateY(-3px)';});btn.addEventListener('mouseleave',function(){btn.style.transform='';});});})();
+//]]>
+</script>
+</body>
+</html>
